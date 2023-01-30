@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 class SecuredController < ApplicationController
-	before_action :authorize_request
+  before_action :authorize_request
 
-	private
+  private
 
-	def authorize_request
-		AuthorizationService.new(request.headers).authenticate_request!
-	rescue JWT::VerificationError, JWT::DecodeError
-		render json: { errors: ['Not Authenticated'] }, status: :unauthorized
-	end
+  def authorize_request
+    AuthorizationService.new(request.headers).authenticate_request!
+  rescue JWT::VerificationError, JWT::DecodeError
+    render json: { errors: ['Not Authenticated'] }, status: :unauthorized
+  end
 end
