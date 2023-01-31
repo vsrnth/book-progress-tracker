@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -6,9 +8,9 @@ ruby '3.2.0'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'bootsnap', require: false
 gem 'jwt'
+gem "pg", "~> 1.1"
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.4', '>= 7.0.4.2'
-gem 'sqlite3', '~> 1.4'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
