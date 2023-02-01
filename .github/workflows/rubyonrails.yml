@@ -47,8 +47,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Install Ruby and gems
-        uses: ruby/setup-ruby@ee2113536afb7f793eed4ce60e8d3b26db912da4 # v1.127.0
+        uses: ruby/setup-ruby@f78d71faf45b9c5cad1da061204c9e021cdb97f7 # v1.130.0
         with:
+          ruby-version: 3.2.0
           bundler-cache: true
       # Add or replace any other lints here
       - name: Security audit dependencies
