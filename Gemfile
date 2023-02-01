@@ -43,5 +43,5 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem "debug", ">= 1.0.0"
+  # gem "debug", ">= 1.0.0"
 end

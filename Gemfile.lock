@@ -77,7 +77,6 @@ GEM
     concurrent-ruby (1.2.0)
     crass (1.0.6)
     date (3.3.3)
-    debug (1.7.1)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -190,7 +189,6 @@ DEPENDENCIES
   bootsnap
   brakeman
   bundler-audit
-  debug (>= 1.0.0)
   dotenv-rails
   jwt
   pg (~> 1.1)
