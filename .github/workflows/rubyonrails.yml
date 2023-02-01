@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@v3
       # Add or replace dependency steps here
       - name: Install Ruby and gems
-        uses: ruby/setup-ruby@f78d71faf45b9c5cad1da061204c9e021cdb97f7 # v1.130.0
+        uses: ruby/setup-ruby@v1 # v1.130.0
         with:
           rubygems: default
           bundler: latest
@@ -50,7 +50,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Install Ruby and gems
-        uses: ruby/setup-ruby@f78d71faf45b9c5cad1da061204c9e021cdb97f7 # v1.130.0
+        uses: ruby/setup-ruby@v1 # v1.130.0
         with:
           rubygems: default
           bundler: latest
