@@ -190,7 +190,7 @@ DEPENDENCIES
   bootsnap
   brakeman
   bundler-audit
-  debug
+  debug (>= 1.0.0)
   dotenv-rails
   jwt
   pg (~> 1.1)
