@@ -77,6 +77,8 @@ GEM
     concurrent-ruby (1.2.0)
     crass (1.0.6)
     date (3.3.3)
+    dockerfile-rails (1.0.4)
+      rails
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -189,6 +191,7 @@ DEPENDENCIES
   bootsnap
   brakeman
   bundler-audit
+  dockerfile-rails (>= 1.0.0)
   dotenv-rails
   jwt
   pg (~> 1.1)
