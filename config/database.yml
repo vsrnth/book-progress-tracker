@@ -23,11 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: <%= Rails.application.credentials.development.database[:name] %>
-  host: localhost
-  port: 5432
-  username: <%= Rails.application.credentials.development.database[:username] %>
-  password: <%= Rails.application.credentials.development.database[:password] %>
+  url: <%= ENV["DATABASE_URL"] %>
 #  DATABASE_URL: <%#= Rails.application.credentials.database[:url] %>
 
   # The specified database role being used to connect to postgres.
