@@ -46,4 +46,4 @@ group :development do
   # gem "debug", ">= 1.0.0"
 end
 
-gem "dockerfile-rails", ">= 1.0.0", :group => :development
+gem 'dockerfile-rails', '>= 1.0.0', group: :development
