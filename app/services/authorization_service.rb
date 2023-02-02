@@ -12,7 +12,7 @@ class AuthorizationService
   private
 
   def http_token
-    return unless @headers['Authorization'].present?
+    return if @headers['Authorization'].blank?
 
     @headers['Authorization'].split(' ').last
   end
