@@ -21,7 +21,7 @@ class JsonWebToken
     jwks_keys = Array(JSON.parse(jwks_raw)['keys'])
     Hash[
       jwks_keys
-        .map do |k|
+      .map do |k|
         [
           k['kid'],
           OpenSSL::X509::Certificate.new(
