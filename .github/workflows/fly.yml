@@ -1,3 +1,4 @@
+---
 name: Fly Deploy
 on:
   push:
@@ -10,9 +11,9 @@ jobs:
     name: Deploy app
     runs-on: ubuntu-latest
   steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-      - name: Setup Flyctl
-        uses: superfly/flyctl-actions/setup-flyctl@master
-      - name: Trigger Remote Deploy
-        run: flyctl deploy --remote-only
+    - name: Checkout Code
+      uses: actions/checkout@v3
+    - name: Setup Flyctl
+      uses: superfly/flyctl-actions/setup-flyctl@master
+    - name: Trigger Remote Deploy
+      run: flyctl deploy --remote-only
