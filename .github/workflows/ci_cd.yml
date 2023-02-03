@@ -1,0 +1,72 @@
+name: Book Progress Tracker CI CD
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+jobs:
+  test_job:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:14
+        ports:
+          - "5432:5432"
+        env:
+          POSTGRES_DB: rails_test
+          POSTGRES_USER: rails
+          POSTGRES_PASSWORD: password
+    env:
+      RAILS_ENV: test
+      TEST_DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
+      DEV_DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1
+        with:
+          rubygems: default
+          bundler: latest
+          bundler-cache: true
+      - name: Install dependencies
+        run: bundle install --full-index
+      - name: Set up database schema
+        run: bin/rails db:schema:load
+      - name: Run tests
+        run: bin/rake
+  linter_security_audit_job:
+    name: Lint and Security Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1
+        with:
+          rubygems: default
+          bundler: latest
+          bundler-cache: true
+      - name: Install dependencies
+        run: bundle install --full-index
+      - name: Security audit dependencies
+        run: bundle exec bundle audit --update
+      - name: Security audit application code
+        run: bundle exec brakeman -q -w2
+      - name: Lint Ruby files
+        run: bundle exec rubocop --parallel
+  third_job:
+    name: Fly Deploy
+    runs-on: ubuntu-latest
+    needs: [test_job, linter_security_audit_job]
+    if: github.ref == 'refs/head/main'
+    env:
+      FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Setup Flyctl
+        uses: superfly/flyctl-actions/setup-flyctl@master
+      - name: Trigger Remote Deploy
+        run: flyctl deploy --remote-only
