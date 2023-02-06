@@ -1,6 +1,6 @@
 # README
 
-Build Status: https://github.com/vsrnth/book-progress-tracker/actions/workflows/ci_cd.yml/badge.svg
+Build Status: https://github.com/vsrnth/book-progress-tracker/actions/workflows/ci_cd.yml/badge.svg?branch=main
 
 
 ---
