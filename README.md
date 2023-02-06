@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Build Status: https://github.com/vsrnth/book-progress-tracker/actions/workflows/ci_cd.yml/badge.svg
 
-Things you may want to cover:
 
-* Ruby version
+---
+Rails app for the API of the book progress tracker app.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Hosted at: https://book-progress-tracker.fly.dev
