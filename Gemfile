@@ -11,8 +11,8 @@ gem 'jwt'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.4', '>= 7.0.4.2'
+gem 'skylight'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
